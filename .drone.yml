@@ -2,6 +2,6 @@ pipeline:
   build:
     image: golang:1.7
     commands:
-      - go get 
+      - go get -u github.com/vaibhavk9/godrone
       - go test 
       - go build
