@@ -5,8 +5,5 @@ pipeline:
       - go get 
       - go test 
       - go build
-      
-  publish:
-    coverage:
-      when:
-      branch: master
+  
+  
