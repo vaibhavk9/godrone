@@ -8,11 +8,9 @@ pipeline:
     image: golang:1.8
     commands:
       - go get -u github.com/vaibhavk9/godrone
-      - go test -u github.com/vaibhavk9/godrone
+      - go test github.com/vaibhavk9/godrone
 
   build:
     image: golang:1.8
     commands:
-      - go get 
-      - go build
-                  
+      - go build                 
