@@ -2,12 +2,17 @@ workspace:
   base: /go
   path: src/github.com/vaibhavk9/godrone
 
-build:
-    image: golang:1.7
+pipeline:
+
+  test:
+    image: golang:1.8
     commands:
-      - go test -cover -coverprofile coverage.out
-            
-publish:
-  coverage:
-    when:
-    branch: master      
+      - go get -u github.com/vaibhavk9/godrone
+      - go test -u github.com/vaibhavk9/godrone
+
+  build:
+    image: golang:1.8
+    commands:
+      - go get 
+      - go build
+                  
