@@ -6,5 +6,10 @@ build:
     image: golang:1.7
     commands:
       - go get -u github.com/vaibhavk9/godrone
-      - go test github.com/vaibhavk9/godrone
+      - go test -cover -coverprofile coverage.out
       - go build github.com/vaibhavk9/godrone
+      
+publish:
+  coverage:
+    when:
+    branch: master      
