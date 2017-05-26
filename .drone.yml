@@ -3,8 +3,8 @@ pipeline:
     image: golang:1.7
     pull: true
     commands:
-      - go get -u github.com/vaibhavk9/godrone
-      - go test -cover -coverprofile coverage.out
+      - go get 
+      - go test 
       - go build
 
   publish:
