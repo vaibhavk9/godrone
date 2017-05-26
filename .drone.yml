@@ -1,6 +1,10 @@
- build:
+workspace:
+  base: /go
+  path: src/github.com/vaibhavk9/godrone
+
+build:
     image: golang:1.7
     commands:
       - go get -u github.com/vaibhavk9/godrone
-      - go test 
-      - go build
+      - go test github.com/vaibhavk9/godrone
+      - go build github.com/vaibhavk9/godrone
