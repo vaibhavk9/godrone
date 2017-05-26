@@ -4,7 +4,8 @@ workspace:
   
 pipeline:
   build:
-    image: golang:latest
+    image: golang:1.7
+    pull: true
     commands:
       - go get -u github.com/vaibhavk9/godrone
       - go build
