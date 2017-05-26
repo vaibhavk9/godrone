@@ -5,5 +5,10 @@ import (
 )
 
 func main() {
-	fmt.Println("To hell with this world ! ")
+	fmt.Println(HelloWorld())
+}
+
+
+func HelloWorld() string {
+	return "To hell with this world !"
 }
