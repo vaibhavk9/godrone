@@ -1,5 +1,4 @@
-pipeline:
-  build:
+ build:
     image: golang:1.7
     commands:
       - go get -u github.com/vaibhavk9/godrone
