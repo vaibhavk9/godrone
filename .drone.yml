@@ -12,7 +12,6 @@ pipeline:
   gcr:
     image: stayfari/drone-gcr
     repo: vaibhavk9/godrone
-    storage_driver: overlay
     token:
     -
     type: "service_account"
