@@ -9,12 +9,10 @@ pipeline:
     commands:
       - go build github.com/vaibhavk9/godrone                
   
-  docker:
-    image: plugins/docker
-    insecure: true
-    username: vaibhavk9
-    password: Vkspace@99
-    email: vaibhav_space@hotmail.com
-    repo:     vaibhavk9/godrone
-    tag:      latest
-    file:     Dockerfile   
+  gcr:
+    image: plugins/gcr
+    environment:
+      		- DOCKER_LAUNCH_DEBUG=true
+    repo: vaibhavk9/godrone
+    token: >
+      $$GCR_TOKEN
