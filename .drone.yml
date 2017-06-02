@@ -16,39 +16,9 @@ pipeline:
       - go build github.com/vaibhavk9/godrone                
   
 publish:
-      image: stayfari/drone-gcr
-      repo: vaibhavk9/godrone
-      token: 
-      client_email: zang-api-sandbox@appspot.gserviceaccount.com
-      client_id: "106102954628333680345"
-      private_key: |
-          -----BEGIN PRIVATE KEY-----
-          MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDHRv7t/CXWb5t7
-          Q9lVOjCWn4kCY6/bkFBnpWGIpUAoWLiXUf6Pyh4xTN13GYqPCQkaMVp9jJv0agI3
-          GsyW9wAiwnoIQ6fDbDTvttmiS6eUmLB+Rj1c7gnFSEkXOA5diLh9/i5zVtN38uTb
-          WgAOIzMhwrNjShkQUUmV/lHNX8g3cgddsOkgE7/r92gy36NpHJ/yHmRIEaADk9Pq
-          usPNztDHBGRJi45Aiq8reQpzzJiekoh7PzjaPcM6q8Acm0jCn9LOP/bFnbDDCYRZ
-          Vaggh39+PXQVdrY2AzAnQ776j0oEl4OfE/XZql9VrNOuERikSB48Sz9a+srbrvdQ
-          Puw6ZnHtAgMBAAECggEAJjl1DvtN2rsfzN4v4ww9Y7cIVd//TJN7CNaNRePE0bhq
-          +AOvW69+aSCAXqcUj+lAyLhsziZZh+GJuT43vkF00jYRqGIp3O91nAGr71iptXQw
-          bphUju3OC/yYoI6NGt3t3aUTDea6u4ho47Z4yj1wQmqRdFszQZEGF3JoCIf15MRw
-          7T9ha61FTucuhAVdVaABmMZB5ImRyMOiY7uBp9Flj6Do8bb5AaScDIj8yiaTKkah
-          H1sSHM/0R2Ywp+RuqgFc2w/NQL1Vzvb5HKhl7NsoLA31+ZxKiB5VEMnYmOoVBWVK
-          V7qtRPN3njdJdFpPsKY5Erw0Adg+9xTIlG2bV6n9IQKBgQDsh1vGailY0Q7WjTqA
-          JKlniJS0VY52oZsH4ReOWd4y0+N9ilBLRRmHwE+p45aVJoN43oa1xDshOt+/c8Rx
-          tujJ+suNoYKx+wylRPRNUJ2W5VuETuOX56G+tXao/tUH9qqxC6AkAsFZx2IGteqf
-          Bt0ispkqTSVLuTlhOc5Wnq9QFQKBgQDXrphySxH9xvoig8gYmMBgVLAPewaBSem+
-          oWUHUjH1WliBMp4TNx4Idj00mAs4vr9jOnqyX9RiMMiunCaDqk/UtHzQlLAXeh54
-          krXQaTb3dXdeljQ3u54gBoYMF1PogLEuRrLojaUN6WI/KNNoeA0WmlkYacYVrnLn
-          tB3zXDE4eQKBgHs0/w9Z2XPUYmBMbL63Wi7+LEfLkUwmXjU6gSS7l0zupr+MPssW
-          kXfvKxAZ5ySGTVG2yIECWLK0kjyONzPszVH4+/MowIWpeirUwlVLuusRShyfY1qL
-          Y+uNZuQc6icdzEgxABgB/2mevGc2d6Ki1qnuUm6AhP7u2v7UN7FTM4sJAoGAS6S/
-          cK5lg/TqO3qujfnc1qw9B2Dleii7IxGlxjiMrvlduwpOqHyXOu6FLtH4dZFovFuB
-          NtgnO7zSVXMMivcLgpU+hUTwsXsx/qWtwId2MLnxAKp7a+SQY7kGAG2aDxw7h/hh
-          vPAYqFVnELG325bnODsv7kECqQ4C3MKuEnEODjkCgYBdDGw7j+9lBvgCObObstki
-          y4ac5wj7h87Opfb9y20i6Ho1CrsUKdzmC3W3uwgd3u54xSleXk/kRw3Rk2R9LnEF
-          967ZkOut1KRHqHqzenJZ0lwCyiZ2VCTNwHbV0qwJuYCXkJcYgAiHk3hor42vIiDE
-          vd4/oYvHqGgHZk30Uc3wYQ==
-          -----END PRIVATE KEY-----
-      private_key_id: f4ddca4d406f4ec70d55b21447d2746de2e3af79
-      type: service_account
+  docker:
+    insecure: true
+    repo:     vaibhavk9/godrone
+    tag:      latest
+    file:     Dockerfile
+    
