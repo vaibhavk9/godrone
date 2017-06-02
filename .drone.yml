@@ -11,22 +11,11 @@ pipeline:
   
   publish:
     image: stayfari/drone-gcr
-    commands:
-      - "mkdir /root"
     repo: vaibhavk9/godrone
     storage_driver: overlay
     privileged: true
     environment:
       - DOCKER_LAUNCH_DEBUG=true
-    token:
-    -
-    type: "service_account"
-    project_id: "zang-api-sandbox"
-    private_key_id: "f4ddca4d406f4ec70d55b21447d2746de2e3af79"
-    private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDHRv7t/CXWb5t7\nQ9lVOjCWn4kCY6/bkFBnpWGIpUAoWLiXUf6Pyh4xTN13GYqPCQkaMVp9jJv0agI3\nGsyW9wAiwnoIQ6fDbDTvttmiS6eUmLB+Rj1c7gnFSEkXOA5diLh9/i5zVtN38uTb\nWgAOIzMhwrNjShkQUUmV/lHNX8g3cgddsOkgE7/r92gy36NpHJ/yHmRIEaADk9Pq\nusPNztDHBGRJi45Aiq8reQpzzJiekoh7PzjaPcM6q8Acm0jCn9LOP/bFnbDDCYRZ\nVaggh39+PXQVdrY2AzAnQ776j0oEl4OfE/XZql9VrNOuERikSB48Sz9a+srbrvdQ\nPuw6ZnHtAgMBAAECggEAJjl1DvtN2rsfzN4v4ww9Y7cIVd//TJN7CNaNRePE0bhq\n+AOvW69+aSCAXqcUj+lAyLhsziZZh+GJuT43vkF00jYRqGIp3O91nAGr71iptXQw\nbphUju3OC/yYoI6NGt3t3aUTDea6u4ho47Z4yj1wQmqRdFszQZEGF3JoCIf15MRw\n7T9ha61FTucuhAVdVaABmMZB5ImRyMOiY7uBp9Flj6Do8bb5AaScDIj8yiaTKkah\nH1sSHM/0R2Ywp+RuqgFc2w/NQL1Vzvb5HKhl7NsoLA31+ZxKiB5VEMnYmOoVBWVK\nV7qtRPN3njdJdFpPsKY5Erw0Adg+9xTIlG2bV6n9IQKBgQDsh1vGailY0Q7WjTqA\nJKlniJS0VY52oZsH4ReOWd4y0+N9ilBLRRmHwE+p45aVJoN43oa1xDshOt+/c8Rx\ntujJ+suNoYKx+wylRPRNUJ2W5VuETuOX56G+tXao/tUH9qqxC6AkAsFZx2IGteqf\nBt0ispkqTSVLuTlhOc5Wnq9QFQKBgQDXrphySxH9xvoig8gYmMBgVLAPewaBSem+\noWUHUjH1WliBMp4TNx4Idj00mAs4vr9jOnqyX9RiMMiunCaDqk/UtHzQlLAXeh54\nkrXQaTb3dXdeljQ3u54gBoYMF1PogLEuRrLojaUN6WI/KNNoeA0WmlkYacYVrnLn\ntB3zXDE4eQKBgHs0/w9Z2XPUYmBMbL63Wi7+LEfLkUwmXjU6gSS7l0zupr+MPssW\nkXfvKxAZ5ySGTVG2yIECWLK0kjyONzPszVH4+/MowIWpeirUwlVLuusRShyfY1qL\nY+uNZuQc6icdzEgxABgB/2mevGc2d6Ki1qnuUm6AhP7u2v7UN7FTM4sJAoGAS6S/\ncK5lg/TqO3qujfnc1qw9B2Dleii7IxGlxjiMrvlduwpOqHyXOu6FLtH4dZFovFuB\nNtgnO7zSVXMMivcLgpU+hUTwsXsx/qWtwId2MLnxAKp7a+SQY7kGAG2aDxw7h/hh\nvPAYqFVnELG325bnODsv7kECqQ4C3MKuEnEODjkCgYBdDGw7j+9lBvgCObObstki\ny4ac5wj7h87Opfb9y20i6Ho1CrsUKdzmC3W3uwgd3u54xSleXk/kRw3Rk2R9LnEF\n967ZkOut1KRHqHqzenJZ0lwCyiZ2VCTNwHbV0qwJuYCXkJcYgAiHk3hor42vIiDE\nvd4/oYvHqGgHZk30Uc3wYQ==\n-----END PRIVATE KEY-----\n"
-    client_email: "zang-api-sandbox@appspot.gserviceaccount.com"
-    client_id: "106102954628333680345"
-    auth_uri: "https://accounts.google.com/o/oauth2/auth"
-    token_uri: "https://accounts.google.com/o/oauth2/token"
-    auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
-    client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/zang-api-sandbox%40appspot.gserviceaccount.com"
+    token: >
+    $$GCR_TOKEN
+    
