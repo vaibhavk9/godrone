@@ -17,5 +17,4 @@ pipeline:
     privileged: true
     username: _json_key
     password: [ docker_password ]
-    debug: true
-    
+    debug: true   
