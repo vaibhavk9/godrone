@@ -7,7 +7,7 @@ pipeline:
   build:
     image: golang:1.8
     commands:
-      - go build github.com/vaibhavk9/godrone                
+      - go build                
       
       
   gcr:
