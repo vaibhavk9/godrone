@@ -18,5 +18,6 @@ pipeline:
     privileged: true
     environment:
       - DOCKER_LAUNCH_DEBUG=true
-    token: ${docker_password}
+    token: >
+    ${docker_password}
     
