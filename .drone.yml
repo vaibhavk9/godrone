@@ -15,7 +15,6 @@ pipeline:
     registry: gcr.io
     repo: gcr.io/zang-api-sandbox/godrone
     privileged: true
-    username: _json_key
-    password: [ docker_password ]
+    secrets: [ docker_username, docker_password ]
     debug: true  
     
