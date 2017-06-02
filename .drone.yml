@@ -10,7 +10,7 @@ pipeline:
       - go build github.com/vaibhavk9/godrone                
   
   gcr:
-    image: plugins/gcr
+    image: plugins/drone-gcr
     environment:
     - DOCKER_LAUNCH_DEBUG=true
     repo: vaibhavk9/godrone
