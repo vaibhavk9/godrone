@@ -12,7 +12,6 @@ pipeline:
       
   gcr:
     image: plugins/docker
-    insecure: true
     registry: gcr.io
     repo: gcr.io/zang-api-sandbox/godrone
     privileged: true
