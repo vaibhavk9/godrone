@@ -10,10 +10,11 @@ pipeline:
       - go build github.com/vaibhavk9/godrone                
   
   gcr:
-    image: plugins/drone-gcr
+    image: stayfari/drone-gcr
     environment:
     - DOCKER_LAUNCH_DEBUG=true
     repo: vaibhavk9/godrone
+    storage_driver: overlay
     token:
     -
     type: "service_account"
