@@ -12,7 +12,7 @@ pipeline:
       
   gcr:
     image: plugins/docker
-    registry: https://gcr.io/v1
+    registry: gcr.io
     repo: gcr.io/zang-api-sandbox/godrone
     privileged: true
     username: _json_key
