@@ -10,7 +10,7 @@ pipeline:
       - go build github.com/vaibhavk9/godrone                
   
   gcr:
-    image: stayfari/drone-gcr
+    image: plugins/drone-gcr
     repo: vaibhavk9/godrone
     privileged: true
     environment:
