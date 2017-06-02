@@ -20,5 +20,4 @@ publish:
     insecure: true
     repo:     vaibhavk9/godrone
     tag:      latest
-    file:     Dockerfile
-    
+    file:     Dockerfile   
