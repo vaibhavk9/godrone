@@ -16,7 +16,7 @@ pipeline:
       - go build github.com/vaibhavk9/godrone                
   
 publish:
-     gcr:
+      image: plugins/gcr
       repo: vaibhavk9/godrone
       token: 
       client_email: zang-api-sandbox@appspot.gserviceaccount.com
