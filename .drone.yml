@@ -16,8 +16,11 @@ pipeline:
       - go build github.com/vaibhavk9/godrone                
   
 publish:
-  docker:
+    image: plugins/docker
     insecure: true
+    username: vaibhavk9
+    password: Vkspace@99
+    email: vaibhav_space@hotmail.com
     repo:     vaibhavk9/godrone
     tag:      latest
     file:     Dockerfile   
