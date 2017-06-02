@@ -11,8 +11,6 @@ pipeline:
   
   gcr:
     image: stayfari/drone-gcr
-    environment:
-    - DOCKER_LAUNCH_DEBUG=true
     repo: vaibhavk9/godrone
     storage_driver: overlay
     token:
