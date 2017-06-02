@@ -4,18 +4,12 @@ workspace:
 
 pipeline:
 
-  test:
-    image: golang:1.8
-    commands:
-      - go get github.com/vaibhavk9/godrone
-      - go test github.com/vaibhavk9/godrone
-
   build:
     image: golang:1.8
     commands:
       - go build github.com/vaibhavk9/godrone                
   
-publish:
+  docker:
     image: plugins/docker
     insecure: true
     username: vaibhavk9
