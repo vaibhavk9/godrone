@@ -13,6 +13,8 @@ pipeline:
     privileged: true
     environment:
       - DOCKER_LAUNCH_DEBUG=true
+    commands:
+      - mkdir /root
     token:
     -
     type: "service_account"
