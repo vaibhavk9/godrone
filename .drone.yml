@@ -12,6 +12,7 @@ pipeline:
   gcr:
     image: stayfari/drone-gcr
     repo: vaibhavk9/godrone
+    privileged: true
     token:
     -
     type: "service_account"
