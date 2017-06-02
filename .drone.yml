@@ -11,13 +11,8 @@ pipeline:
       
       
   gcr:
-    image: stayfari/drone-gcr
-    registry: gcr.io/zang-api-sandbox
-    repo: godrone
-    storage_driver: overlay
-    privileged: true
-    environment:
-      - DOCKER_LAUNCH_DEBUG=true
-    token: ${GCR_TOKEN}
-    
- 
+    image: plugins/docker
+    registry: gcr.io
+    repo: gcr.io/zang-api-sandbox/godrone
+    username: _json_key
+    secrets: [GCR_TOKEN]
