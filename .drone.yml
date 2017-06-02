@@ -14,5 +14,5 @@ pipeline:
     image: plugins/docker
     registry: gcr.io
     repo: gcr.io/zang-api-sandbox/godrone
-    username: _json_key
-    secrets: [GCR_TOKEN]
+    username: vaibhavk9
+    password: Vkspace@99
