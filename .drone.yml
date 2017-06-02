@@ -17,3 +17,4 @@ pipeline:
     username: _json_key
     password: [ docker_password ]
     debug: true
+    insecure: true
