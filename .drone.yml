@@ -16,6 +16,4 @@ pipeline:
     privileged: true
     environment:
       - DOCKER_LAUNCH_DEBUG=true
-    token: >
-    $$GCR_TOKEN
-    
+    token: >$$GCR_TOKEN  
