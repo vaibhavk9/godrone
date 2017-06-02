@@ -8,9 +8,9 @@ pipeline:
     image: golang:1.8
     commands:
       - go build github.com/vaibhavk9/godrone                
-  
-  
- publish:
+      
+      
+  gcr:
     image: stayfari/drone-gcr
     repo: vaibhavk9/godrone
     storage_driver: overlay
