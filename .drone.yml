@@ -12,7 +12,8 @@ pipeline:
       
   gcr:
     image: stayfari/drone-gcr
-    repo: vaibhavk9/godrone
+    registry: gcr.io/zang-api-sandbox
+    repo: godrone
     storage_driver: overlay
     privileged: true
     environment:
