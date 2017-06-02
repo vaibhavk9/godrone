@@ -11,10 +11,12 @@ pipeline:
       
       
   gcr:
-    image: plugins/docker
-    registry: gcr.io
+    image: stayfari/drone-gcr
+    registry: gcr.io/zang-api-sandbox
     repo: gcr.io/zang-api-sandbox/godrone
-    username: _json_key
-    password: [ docker_password ]
-    debug: true
+    storage_driver: overlay
+    privileged: true
+    environment:
+      - DOCKER_LAUNCH_DEBUG=true
+    token: ${docker_password}
     
