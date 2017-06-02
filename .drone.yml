@@ -1,3 +1,7 @@
+workspace:
+   base: /go
+   path: src/github.com/vaibhavk9/godrone
+
 pipeline:
 
   build:
@@ -14,7 +18,7 @@ pipeline:
     environment:
       - DOCKER_LAUNCH_DEBUG=true
     commands:
-      - mkdir /root
+      - "mkdir /root"
     token:
     -
     type: "service_account"
