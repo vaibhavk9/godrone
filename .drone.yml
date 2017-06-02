@@ -25,5 +25,4 @@ pipeline:
         "client_email": "zang-api-sandbox@appspot.gserviceaccount.com",
         "client_id": "106102954628333680345",
         "type": "service_account"
-      }
-      
+      }    
