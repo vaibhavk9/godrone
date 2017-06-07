@@ -13,8 +13,8 @@ pipeline:
   gcr:
     image: plugins/docker
     registry: gcr.io
-    repo: gcr.io/zang-api-sandbox/godrone
+    repo: gcr.io/zang-api-sandbox/vaibhavk9/godrone
     privileged: true
     secrets: [ docker_username, docker_password ]
     debug: true  
-    
+    tag: "1.0"
