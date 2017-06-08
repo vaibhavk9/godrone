@@ -1,0 +1,19 @@
+
+pipeline:
+
+  build:
+    image: golang:1.8
+    commands:
+      - git config --global url."git@github.com:".insteadOf "https://github.com/"
+      - git config --global url.ssh://git@github.com/.insteadOf https://github.com/
+      - go get
+      - go build                
+      
+      
+  gcr:
+    image: plugins/docker
+    registry: gcr.io
+    repo: gcr.io/zang-api-sandbox/godrone
+    privileged: true
+    secrets: [ docker_username, docker_password ]
+    debug: true
