@@ -5,4 +5,4 @@ workspace:
  build:
     image: golang:1.8
     commands:
-      - go build
+      - go build github.com/vaibhavk9/godrone
