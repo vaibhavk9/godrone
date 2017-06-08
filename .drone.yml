@@ -1,6 +1,3 @@
-workspace:
-   base: /drone
-   path: src/github.com/vaibhavk9/godrone
 
 pipeline:
 
