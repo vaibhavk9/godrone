@@ -7,7 +7,7 @@ pipeline:
   build:
     image: golang:1.8
     commands:
-      - go build                
+      - go build .               
       
       
   gcr:
@@ -20,14 +20,4 @@ pipeline:
     tag: "1.0"
 
 
-  slack:
-    image: plugins/slack
-    webhook: https://hooks.slack.com/services/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
-    channel: cloud-commits
-    username: Drone
-    template: >
-     {{#success build.status}}
-       Build {{build.number}} for {{repo.owner}}/{{repo.name}} succeeded. Build Link : {{build.link}}
-     {{else}}
-       Build {{build.number}} failed. 
-     {{/success}}
+  
