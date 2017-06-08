@@ -1,0 +1,20 @@
+workspace:
+   base: /drone
+   path: src/github.com/vaibhavk9/godrone
+
+pipeline:
+
+  build:
+    image: golang:1.8
+    commands:
+      - go get ./...
+      - go build                
+      
+      
+  gcr:
+    image: plugins/docker
+    registry: gcr.io
+    repo: gcr.io/zang-api-sandbox/godrone
+    privileged: true
+    secrets: [ docker_username, docker_password ]
+    debug: true
