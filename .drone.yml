@@ -2,7 +2,7 @@ workspace:
    base: /drone
    path: src/github.com/vaibhavk9/godrone
 
-pipeline:
+
 
   build:
     image: golang:1.8
