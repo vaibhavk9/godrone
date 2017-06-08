@@ -18,3 +18,16 @@ pipeline:
     secrets: [ docker_username, docker_password ]
     debug: true  
     tag: "1.0"
+
+
+  slack:
+    image: plugins/slack
+    webhook: https://hooks.slack.com/services/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
+    channel: cloud-commits
+    username: drone
+    template: >
+     {{#success build.status}}
+       build {{build.number}} succeeded. 
+     {{else}}
+       build {{build.number}} failed. 
+     {{/success}}
