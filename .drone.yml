@@ -1,5 +1,5 @@
 workspace:
-   base: /drone
+   base: /go
    path: src/github.com/vaibhavk9/godrone
 
 pipeline:
