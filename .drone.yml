@@ -24,10 +24,10 @@ pipeline:
     image: plugins/slack
     webhook: https://hooks.slack.com/services/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
     channel: cloud-commits
-    username: drone
+    username: Drone
     template: >
      {{#success build.status}}
-       build {{build.number}} succeeded. 
+       Build {{build.number}} for {{repo.owner}}/{{repo.name}} succeeded. Build Link : {{build.link}}
      {{else}}
-       build {{build.number}} failed. 
+       Build {{build.number}} failed. 
      {{/success}}
