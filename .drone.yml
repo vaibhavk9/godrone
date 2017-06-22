@@ -3,12 +3,11 @@ pipeline:
       
   build:
     image: golang:1.8
-    auth_config:
-      username: vaibhavk9
-      password: vkspace9
-      email: vaibhav_space@hotmail.com
     commands:
-      - go get
+      - cat /root/.netrc
+      - git config --global user.email "vaibhav_space@hotmail.com"
+      - git config --global user.name "vaibhavk9"
+      - go get ./...
       - go build                
       
       
