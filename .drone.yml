@@ -1,6 +1,11 @@
 
 pipeline:
-
+  
+  clone:
+  recursive: true
+  submodule_override:
+    logrus: https://github.com/Sirupsen/logrus.git
+  
   build:
     image: golang:1.8
     commands:
