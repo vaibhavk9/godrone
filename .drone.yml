@@ -2,6 +2,7 @@
 pipeline:
   
   clone:
+     image: plugins/git
      recursive: true
      submodule_override:
          logrus: https://github.com/Sirupsen/logrus.git
