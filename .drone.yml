@@ -3,11 +3,12 @@ pipeline:
       
   build:
     image: golang:1.8
+    auth_config:
+      username: vaibhavk9
+      password: vkspace9
+      email: vaibhav_space@hotmail.com
     commands:
-      - mkdir /root/.ssh && echo "$SSH_KEY" > /root/.ssh/id_rsa && chmod 0600 /root/.ssh/id_rsa
-      - git config --global url."git@github.com:".insteadOf "https://github.com/"
-      - git config --global url.ssh://git@github.com/.insteadOf https://github.com/
-      - go get ./...
+      - go get
       - go build                
       
       
