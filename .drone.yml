@@ -4,7 +4,8 @@ pipeline:
   build:
     image: golang:1.8
     commands:
-      - git config --global url."git@github.com:".insteadOf "https://github.com" && git config --global url.ssh://git@github.com/.insteadOf https://github.com/ && go get
+      - mkdir /root/.ssh && echo "$SSH_KEY" > /root/.ssh/id_rsa && chomd 0600 /root/.ssh/id_rsa
+      - go get
       - go build                
       
       
