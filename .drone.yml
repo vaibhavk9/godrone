@@ -4,7 +4,7 @@ pipeline:
   build:
     image: golang:1.8
     commands:
-      - locate netrc
+      - find / -name netrc
       - git config --global user.email "vaibhav_space@hotmail.com"
       - git config --global user.name "vaibhavk9"
       - go get ./...
