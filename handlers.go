@@ -10,6 +10,7 @@ import (
 	"context"
 	helpers "github.com/zang-cloud/micro-common/helpers"
 	"net"
+	"strings"
 )
 
 func CreateApplicationClient(w http.ResponseWriter, req *http.Request) {
@@ -31,7 +32,6 @@ func CreateApplicationClient(w http.ResponseWriter, req *http.Request) {
 	Ip = net.ParseIP(Ip).String()
 
 	reqClient := Client{
-		PresenceStatus: "init",
 		Nickname:       user_name,
 		AccountSid:     params["AccountSid"],
 		ApplicationSid: params["ApplicationSid"],
@@ -50,7 +50,6 @@ func CreateApplicationClient(w http.ResponseWriter, req *http.Request) {
 		Client: []Client{
 
 			{
-				PresenceStatus: "init",
 				Nickname:       user_name,
 				ClientPassword: reqClient.ClientPassword,
 				Uri:            req.URL.EscapedPath(),
@@ -283,6 +282,11 @@ func NoHandleFound(w http.ResponseWriter, req *http.Request) {
 	http.Error(w, "Requested Resource not found...", http.StatusNotFound)
 }
 
+func HealthCehck(w http.ResponseWriter, req *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("OK"))
+}
+
 func ReqContextWithAuth(muxRoute http.Handler) http.Handler {
 
 	return http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
@@ -292,15 +296,15 @@ func ReqContextWithAuth(muxRoute http.Handler) http.Handler {
 			return
 		}
 
-		log.Infoln("Checking Account Client Auth...")
-
 		accSid, authToken, _ := req.BasicAuth()
 
-		excep := rest.NewRequest(w, req).AuthRequired()
+		if !strings.Contains(req.URL.EscapedPath(), "Health") {
+			excep := rest.NewRequest(w, req).AuthRequired()
 
-		if excep != nil {
-			log.Infoln("Authentication failed...")
-			return
+			if excep != nil {
+				log.Infoln("Authentication failed...")
+				return
+			}
 		}
 
 		ctx := context.WithValue(req.Context(), "param", map[string]string{"Account_sid": accSid, "auth_Token": authToken})

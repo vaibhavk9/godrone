@@ -33,14 +33,13 @@ func CreateNewAppClient(cl *Client, ttlVal string) error {
 
 	ttl, _ := strconv.Atoi(ttlVal)
 
-	request := pb.ClientRegisterRequest{}
+	request := pb.ClientOperRequest{}
 	request.Client = &pb.Client{}
 	request.Client.AccountSid = cl.AccountSid
 	request.Client.ApplicationSid = cl.ApplicationSid
 	request.Client.Nickname = cl.Nickname
-	request.Client.PresenceStatus = "init"
 	request.Client.Ttl = int64(ttl)
-	request.Client.RemoteIp = cl.RemoteIp
+	request.Client.ClientSid = cl.ClientSid
 
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
@@ -87,12 +86,12 @@ func GetClientBySID(csid string) (Client, error) {
 		for _, cl := range resp.Clients {
 			c.AccountSid = cl.AccountSid
 			c.ApplicationSid = cl.ApplicationSid
-			c.ClientSid = cl.Sid
+			c.ClientSid = cl.ClientSid
 			c.ClientPassword = cl.ClientToken
 			c.DateCreated = cl.DateCreated.Format(time.ANSIC)
 			c.DateUpdated = cl.DateUpdated.Format(time.ANSIC)
 			c.Nickname = cl.Nickname
-			c.PresenceStatus = cl.PresenceStatus
+			c.PresenceStatus = cl.Presence
 		}
 	}
 
@@ -140,12 +139,12 @@ func ListAppClients(c Client, page int32, pageSize int32) ([]Client, int64, erro
 	} else {
 
 		for _, client := range resp.Clients {
-			c.ClientSid = client.Sid
+			c.ClientSid = client.ClientSid
 			c.ClientPassword = client.ClientToken
 			c.DateCreated = client.DateCreated.Format(time.ANSIC)
 			c.DateUpdated = client.DateUpdated.Format(time.ANSIC)
 			c.Nickname = client.Nickname
-			c.PresenceStatus = client.PresenceStatus
+			c.PresenceStatus = client.Presence
 			ClientArr = append(ClientArr, c)
 		}
 	}
