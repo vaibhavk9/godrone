@@ -1,9 +1,10 @@
 clone : 
-   image: plugins/git
-   recursive: true
-   skip_verify: true
-   submodule_override:
-   logrus: https://github.com/Sirupsen/logrus.git
+   git:
+      image: plugins/git
+      recursive: true
+      skip_verify: true
+      submodule_override:
+      logrus: https://github.com/Sirupsen/logrus.git
 
 pipeline:
       
