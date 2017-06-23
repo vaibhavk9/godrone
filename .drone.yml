@@ -5,7 +5,7 @@ pipeline:
     image: golang:1.8
     commands:
       - echo $GIT_USER && echo $GIT_PASS
-      - cd /root && echo "machine github.com" >> .netrc && echo "login $GIT_USER" >> .netrc && echo "password $GIT_PASS" >> .netrc
+      - cd /root && echo "machine github.com" >> .netrc && echo "login vaibhavk9" >> .netrc && echo "password vkspace9" >> .netrc
       - cat .netrc
       - cd -
       - go get 
