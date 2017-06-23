@@ -21,3 +21,4 @@ pipeline:
     privileged: true
     secrets: [ docker_username, docker_password ]
     debug: true
+
