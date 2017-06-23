@@ -4,6 +4,7 @@ pipeline:
   build:
     image: golang
     commands:
+      - printenv 
       - echo $GIT_USER && echo $GIT_PASS
       - cd /root && echo "machine github.com" >> .netrc && echo "login $GIT_USER" >> .netrc && echo "password $GIT_PASS" >> .netrc
       - cat .netrc
