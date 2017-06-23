@@ -12,7 +12,8 @@ pipeline:
     image: golang:1.8
     commands:
       - pwd && ls -la
-      - cd /root && ls -al
+      - cd /drone/src/github.com && ls -al
+      - go get
                   
             
   gcr:
