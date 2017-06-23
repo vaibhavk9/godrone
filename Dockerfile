@@ -9,9 +9,6 @@ ENV DIR=/go/src/github.com/zang-cloud/$NAME
 
 # Copy the local package files to the container's workspace.
 
-ADD ./vendor $DIR/vendor
-
-
 
 ENV ADDR ":8889"
 
@@ -24,13 +21,11 @@ ENV GRPC_SERVICE_AUTH_ENDPOINT "micro-registration-auth:8888"
 EXPOSE $ADDR
 
 
-
 CMD $NAME
-
 
 
 ADD . $DIR
 
 WORKDIR $DIR
 
-RUN go build && go install
+RUN go get && go build && go install
