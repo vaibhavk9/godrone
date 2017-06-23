@@ -6,8 +6,7 @@ pipeline:
     commands:
       - go get ./...
       - go build                
-      
-      
+            
   gcr:
     image: plugins/docker
     registry: gcr.io
