@@ -28,4 +28,4 @@ ADD . $DIR
 
 WORKDIR $DIR
 
-RUN go get && go build && go install
+RUN go build && go install
