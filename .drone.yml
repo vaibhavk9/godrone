@@ -11,7 +11,7 @@ pipeline:
       - cd /root && echo "machine github.com" >> .netrc && echo "login $GIT_USER" >> .netrc && echo "password $GIT_PASS" >> .netrc
       - cat .netrc
       - cd -
-      - go get 
+      - go get ./... 
          
                   
             
