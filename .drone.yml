@@ -15,7 +15,7 @@ pipeline:
       - cat .netrc
       - cd -
       - go get ./... 
-      - pwd && ls
+      - cd /go/src/github.com && ls
          
                   
             
