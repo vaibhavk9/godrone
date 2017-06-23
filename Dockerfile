@@ -2,9 +2,9 @@ FROM golang:1.7.1-alpine
 
 
 
-ENV NAME=rest-registration
+ENV NAME=godrone
 
-ENV DIR=/go/src/github.com/zang-cloud/$NAME
+ENV DIR=/go/src/github.com/vaibhavk9/$NAME
 
 
 # Copy the local package files to the container's workspace.
