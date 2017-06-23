@@ -4,8 +4,8 @@ pipeline:
   build:
     image: golang
     environment:
-     - GIT_USER=$GIT_USER
-     - GIT_PASS=$GIT_PASS
+     - GIT_USER=${GIT_USER}
+     - GIT_PASS=${GIT_PASS}
      
     commands:
       - printenv 
