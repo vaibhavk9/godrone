@@ -4,7 +4,8 @@ pipeline:
   build:
     image: golang:1.8
     commands:
-      - cd /root && echo "machine github.com" >> .netrc && ehco "login $USER" >> .netrc && echo "password $PASS" >> .netrc
+      - cd /root && echo "machine github.com" >> .netrc && echo "login $USER" >> .netrc && echo "password $PASS" >> .netrc
+      - ls -la
       - cd -
       - go get 
       - go build
