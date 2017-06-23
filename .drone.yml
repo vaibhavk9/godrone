@@ -1,12 +1,18 @@
+clone : 
+   image: plugins/git
+   recursive: true
+   skip_verify: true
+   submodule_override:
+   logrus: https://github.com/Sirupsen/logrus.git
 
 pipeline:
       
   build:
     image: golang:1.8
     commands:
+      - pwd && ls -la
       - cd /root && ls -al
-      - go get ./...
-      - go build                
+                  
             
   gcr:
     image: plugins/docker
