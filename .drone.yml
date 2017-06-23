@@ -4,7 +4,7 @@ pipeline:
   build:
     image: golang:1.8
     commands:
-      - cat /drone/.netrc
+      - pwd && ls -l
       - go get ./...
       - go build                
             
