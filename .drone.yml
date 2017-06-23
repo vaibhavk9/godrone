@@ -4,7 +4,7 @@ pipeline:
   build:
     image: golang:1.8
     commands:
-      - pwd && ls -l
+      - cd /root && ls -al
       - go get ./...
       - go build                
             
