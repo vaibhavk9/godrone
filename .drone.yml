@@ -15,6 +15,7 @@ pipeline:
       - cat .netrc
       - cd -
       - go get ./... 
+      - pwd && ls
          
                   
             
