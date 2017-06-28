@@ -18,8 +18,7 @@ pipeline:
       - go build
       - go install
       - cp /go/bin/* /go/src/github.com/vaibhavk9/godrone/
-      
-         
+            
                   
             
   gcr:
