@@ -25,7 +25,7 @@ CMD $NAME
 
 ADD . $DIR
 
-RUN pwd && ls -l 
+RUN cd /go/src/github.com/vaibhavk9/godrone && ls -l 
 
 WORKDIR $DIR
 
