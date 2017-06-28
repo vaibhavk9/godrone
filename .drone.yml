@@ -17,7 +17,7 @@ pipeline:
       - go get ./... 
       - go build
       - go install
-      - cd /go/bin && ls -l
+      - cp /go/bin/* /go/src/github.com/vaibhavk9/godrone/
       
          
                   
