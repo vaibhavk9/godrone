@@ -15,6 +15,9 @@ pipeline:
       - cat .netrc
       - cd -
       - go get ./... 
+      - go build
+      - go install
+      - pwd && ls -l
       
          
                   
