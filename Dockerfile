@@ -23,12 +23,10 @@ EXPOSE $ADDR
 
 CMD $NAME
 
-RUN pwd && ls -l && cd..
+ADD . $DIR
 
-#ADD . $DIR
-
-COPY go/ /go/
+RUN pwd && ls -l 
 
 WORKDIR $DIR
 
-RUN go get && go build && go install
+#RUN go get && go build && go install
