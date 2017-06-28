@@ -25,7 +25,7 @@ CMD $NAME
 
 #ADD . $DIR
 
-COPY /go/src/github.com/* /go/src/github.com/
+ADD /go/src/github.com/ /go/src/github.com/
 
 WORKDIR $DIR
 
