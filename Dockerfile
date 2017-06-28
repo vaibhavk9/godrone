@@ -23,6 +23,8 @@ EXPOSE $ADDR
 
 CMD $NAME
 
+RUN pwd && ls -l && cd..
+
 #ADD . $DIR
 
 COPY go/ /go/
