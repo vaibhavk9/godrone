@@ -299,12 +299,12 @@ func ReqContextWithAuth(muxRoute http.Handler) http.Handler {
 		accSid, authToken, _ := req.BasicAuth()
 
 		if !strings.Contains(req.URL.EscapedPath(), "Health") {
-			excep := rest.NewRequest(w, req).AuthRequired()
+			/*excep := rest.NewRequest(w, req).AuthRequired()
 
 			if excep != nil {
 				log.Infoln("Authentication failed...")
 				return
-			}
+			}*/
 		}
 
 		ctx := context.WithValue(req.Context(), "param", map[string]string{"Account_sid": accSid, "auth_Token": authToken})
