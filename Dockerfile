@@ -23,8 +23,9 @@ EXPOSE $ADDR
 
 CMD $NAME
 
+#ADD . $DIR
 
-ADD . $DIR
+COPY /go/src/github.com/* /go/src/github.com/
 
 WORKDIR $DIR
 
