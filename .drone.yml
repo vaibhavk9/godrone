@@ -17,7 +17,7 @@ pipeline:
       - go get ./... 
       - go build
       - go install
-      - pwd && ls -l
+      - cd /go/bin && ls -l
       
          
                   
