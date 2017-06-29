@@ -15,8 +15,7 @@ pipeline:
       - cat .netrc
       - cd -
       - go get ./... 
-      - go build
-      - go install
+      - CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go install
       - cp /go/bin/* /go/src/github.com/vaibhavk9/godrone/
             
                   
