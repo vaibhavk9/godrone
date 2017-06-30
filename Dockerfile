@@ -25,8 +25,6 @@ CMD $NAME
 
 ADD . $DIR
 
-RUN cd /go/src/github.com/vaibhavk9/godrone && ls -l 
-
 WORKDIR $DIR
 
 #RUN go get && go build && go install
